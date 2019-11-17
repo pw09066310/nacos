@@ -1,0 +1,29 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 18085
+spring:
+  application:
+    name: nacos-gateway
+  cloud:
+    gateway:
+      routes:
+        -   filters:
+              - StripPrefix=2
+            id: nacos-route-cat
+            predicates:
+              - args[pattern]: /vip-api/report/**
+                name: Path
+            uri: lb://nacos-cat-server
+    #            id: nacos-route-1
+    #            predicates:
+    #              -   args[pattern]: /nacos/order/**
+    #                  name: Path
+    #            uri: lb://nacos-order-server
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
