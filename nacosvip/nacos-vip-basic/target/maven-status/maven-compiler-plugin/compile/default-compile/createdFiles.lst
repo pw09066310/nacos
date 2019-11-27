@@ -1,5 +1,0 @@
-com\vcredit\mapper\UserMapper.class
-com\vcredit\SuperMapper.class
-com\vcredit\dao\UserDao.class
-com\vcredit\config\MybatisPlusConfig.class
-com\vcredit\model\user\User.class
